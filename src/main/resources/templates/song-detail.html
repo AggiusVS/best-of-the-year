@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Song Detail</title>
+</head>
+
+<body>
+    <h2>Song Detail</h2>
+    <p th:if="${song != null}" th:text="${song.title}">Titolo canzone</p>
+    <p th:if="${song == null}">Song not found</p>
+    <p><a th:href="@{/songs}">Torna alla lista</a></p>
+</body>
+
+</html>

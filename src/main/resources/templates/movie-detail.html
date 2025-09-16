@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Detail</title>
+</head>
+
+<body>
+    <h2>Movie Detail</h2>
+    <p th:if="${movie != null}" th:text="${movie.title}">Titolo film</p>
+    <p th:if="${movie == null}">Movie not found</p>
+    <p><a th:href="@{/movies}">Torna alla lista</a></p>
+</body>
+
+</html>

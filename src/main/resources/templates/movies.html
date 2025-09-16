@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Best Movies</title>
+</head>
+
+<body>
+    <h2>Best Movies</h2>
+    <p th:text="${movies}">Titoli dei film qui</p>
+    <p>Per vedere il dettaglio: <code>/movies/{id}</code> (es. /movies/1)</p>
+</body>
+
+</html>
