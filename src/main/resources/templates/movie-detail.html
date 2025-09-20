@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Movie Detail</title>
-</head>
+<head th:replace="fragments/head :: head('Movie Detail')"></head>
 
 <body>
-    <h2>Movie Detail</h2>
-    <p th:if="${movie != null}" th:text="${movie.title}">Titolo film</p>
-    <p th:if="${movie == null}">Movie not found</p>
-    <p><a th:href="@{/movies}">Torna alla lista</a></p>
+    <th:block th:replace="fragments/navbar :: navbar"></th:block>
+
+    <h2 class="text-center" th:text="${movie.title}"></h2>
+    <div class="text-center mt-4">
+        <a class="btn btn-secondary" th:href="@{/movies}">Back to Movies</a>
+    </div>
+
+    <th:block th:replace="fragments/footer :: footer"></th:block>
 </body>
 
 </html>

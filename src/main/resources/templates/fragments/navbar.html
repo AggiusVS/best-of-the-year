@@ -1,0 +1,11 @@
+<div th:fragment="navbar">
+    <header class="border-bottom">
+        <div class="container d-flex justify-content-between align-items-center py-2">
+            <span class="fw-bold h3">Best of</span>
+            <div>
+                <a class="btn btn-outline-primary me-2" th:href="@{/movies}">Movies</a>
+                <a class="btn btn-outline-secondary" th:href="@{/songs}">Songs</a>
+            </div>
+        </div>
+    </header>
+    <div class="container mt-4">

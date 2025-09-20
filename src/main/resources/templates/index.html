@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <meta charset="UTF-8">
-    <title>Best of the Year</title>
-</head>
+<head th:replace="fragments/head :: head('Home')"></head>
 
 <body>
-    <h1 th:text="'Best of the year by ' + ${nome}">Best of the year</h1>
+    <div th:replace="fragments/navbar :: navbar"></div>
+    <h2 class="text-center">Best of by ...</h2>
+    <div class="d-flex flex-column align-items-center mt-4">
+        <div class="d-flex justify-content-center align-items-center border" style="width:300px; height:150px; 
+                    background-image: url('https://picsum.photos/300/150'); 
+                    background-size: cover; 
+                    background-position: center;">
+            <span class="text-white fw-bold"></span>
+        </div>
 
-    <ul>
-        <li><a th:href="@{/movies}">Lista Movies</a></li>
-        <li><a th:href="@{/songs}">Lista Songs</a></li>
-    </ul>
+        <div class="p-3 border mt-2 text-center" style="width: 300px;">
+            <span th:text="${nome}"></span>
+        </div>
+    </div>
+
+    <div th:replace="fragments/footer :: footer"></div>
 </body>
 
 </html>

@@ -1,7 +1,6 @@
 package com.example.best_of_the_year.controller;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,7 +26,9 @@ public class HomeController {
         return List.of(
             new Movie(1, "Inception"),
             new Movie(2, "Interstellar"),
-            new Movie(3, "Pulp Fiction")
+            new Movie(3, "Pulp Fiction"),
+            new Movie(4, "Il Padrino"),
+            new Movie(5, "Mr. Nobody")
           );
     }
 
@@ -35,16 +36,15 @@ public class HomeController {
         return List.of(
             new Song(1, "Imagine"),
             new Song(2, "In the end"),
-            new Song(3, "Bohemian Rhapsody")
+            new Song(3, "Bohemian Rhapsody"),
+            new Song(4, "What I've done"),
+            new Song(5 ,"Crazy Train")
         );
     }
 
      @GetMapping("/movies")
     public String movies(Model model) {
-        String movieTitles = getBestMovies().stream()
-                .map(Movie::getTitle)
-                .collect(Collectors.joining(", "));
-        model.addAttribute("movies", movieTitles);
+        model.addAttribute("movies", getBestMovies());
         return "movies";
     }
 
@@ -57,12 +57,10 @@ public class HomeController {
         model.addAttribute("movie", movie);
         return "movie-detail";
     }
+    
     @GetMapping("/songs")
     public String songs(Model model) {
-        String songTitles = getBestSongs().stream()
-                .map(Song::getTitle)
-                .collect(Collectors.joining(", "));
-        model.addAttribute("songs", songTitles);
+        model.addAttribute("songs", getBestSongs());
         return "songs";
     }
     @GetMapping("/songs/{id}")
